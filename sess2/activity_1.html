@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 
+    Maksym Yaremko
+    WEB 200
+    Assignment 2, Activity 1
+    09/01/2025
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator | Assignment 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Welcome to Salary Calculator</h1>
+    <p class="info">Based on monthly and annual calculations for 12 months per year and 52 weeks per year.</p>
+    <div class="input">
+        <label for="input__hours">How many hours do you work per week?</label>
+        <input type="number" class="input__hours" name="input__hours" id="input__hours" value="0">
+    </div>
+    <div class="input">
+        <label for="input__rate">What's your hourly rate?</label>
+        <input type="number" class="input__rate" name="input__rate" id="input__rate" value="0">
+    </div>
+    <button class="button">Calculate</button>
+    <div class="results">
+        <h2>Your estamited gross salary</h2>
+        <div>Weekly: <span class="result__weekly">0$</span></div>
+        <div>Monthly: <span class="result__montly">0$</span></div>
+        <div>Annual: <span class="result__yearly">0$</span></div>
+    </div>
+
+    <script src="scripts/activity_1.js"></script>
+</body>
+</html>
