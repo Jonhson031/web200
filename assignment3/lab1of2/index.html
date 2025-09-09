@@ -1,0 +1,56 @@
+<!-- 
+    Maksym Yaremko
+    WEB 200
+    Assignment 3, Lab 1
+    09/08/2025
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 200 - Session 3, Lab 1 of 2: Functions that controls page CSS</title>
+    <style>
+        .button {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        #disp {
+            border: thin solid black;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function makeLight(){
+            document.getElementById('disp').style = "color: black; background-color: white;"
+        }
+        function makeDark(){
+            document.getElementById('disp').style = "color: white; background-color: black;"
+        }
+    </script>
+</head>
+
+<body>
+    <h1>WEB 200 - Session 3, Lab 1 of 2: Functions that controls page CSS</h1>
+    <div class="button">
+        <input type="button" value="Light" onclick="makeLight()">
+        <input type="button" value="Dark" onclick="makeDark()">
+    </div>
+    <div id="disp">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio consectetur rem dolores placeat ratione
+            architecto ipsam assumenda pariatur quo labore minus, provident veritatis facilis, ex officiis earum error
+            vero tenetur!
+        </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus vitae exercitationem, voluptates cupiditate
+            velit amet doloremque nesciunt consequatur expedita accusamus reiciendis explicabo magni, consectetur
+            molestiae sunt fugiat laborum facere ipsa.
+        </p>
+    </div>
+</body>
+
+</html>
