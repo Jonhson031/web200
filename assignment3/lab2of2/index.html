@@ -1,0 +1,67 @@
+<!-- 
+    Maksym Yaremko
+    WEB 200
+    Assignment 3, Lab 3
+    09/08/2025
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 200 - Session 3: Function that returns today's name</title>
+</head>
+<body>
+    <h1>WEB 200 - Session 3: Function that returns today's name</h1>
+    <h2>Today's name is</h2>
+    <p id="tname"></p>
+    <h2>Two days from now the name of the day is:</h2>
+    <p id="tnameTwo"></p>
+    <script>
+        function dayName(dnum) {
+            let day;
+
+            if (dnum > 6) {
+                dnum = dnum - 7;
+            }
+
+            switch (dnum) {
+                case 0:
+                    day = "Sunday";
+                    break;
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    day = "Saturday";
+                    break;
+            }
+
+            return day;
+        }
+
+        const todayDate = new Date();
+        const dowNum = todayDate.getDay();
+        const twodowNum = dowNum + 2;
+
+        const dow = dayName(dowNum);
+        const dowTwo = dayName(twodowNum);
+
+        document.getElementById('tname').innerHTML = dow;
+        document.getElementById('tnameTwo').innerHTML = dowTwo;
+    </script>
+</body>
+</html>
