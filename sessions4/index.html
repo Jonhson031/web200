@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- 
+    Maksym Yaremko
+    WEB 200
+    Assignment 4
+    09/15/2025
+ -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event | Assignment 4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="overlay-modal hidden"></div>
+    <h1>Events</h1>
+    <ul>
+        <li>
+            <h2>1. 'click' event</h2>
+            <h2>2. 'keydown' event</h2>
+            <button class="modal-btn">Click to open modal window</button>
+            <div class="modal hidden">
+                <p>Use button Escape "Esc" to close this window</p>
+                <div class="modal__close">X</div>
+                <p>
+                    The keydown event is triggered when a specific key is pressed. For example, you can tell your
+                    program to check if the user presses the Escape key on the keyboard, and if so, the modal window
+                    will close.
+                </p>
+            </div>
+            <p>
+                The click event is very common to use in web projects. It is triggered whenever a user clicks on an
+                element, such as a button or a link. Clicking on a button can remove the hidden
+                tag from the modal so it becomes visible. It's also often used for burger menus, following the same
+                principle as with a modal window.
+            </p>
+        </li>
+        <li>
+            <h2>3. change</h2>
+            <select id="select1">
+                <option value="">-- choose color --</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+            <p id="changeInfo"></p>
+            <p>
+                The change event occurs when the value of an input, select, or textarea element is modified. For
+                example,
+                if a user selects a different option from a dropdown menu, the program can detect the change and update
+                the page or perform an action based on the new selection.
+            </p>
+        </li>
+        <li>
+            <h2>4. focus</h2>
+            <h2>5. blur</h2>
+            <input type="text" id="input1" placeholder="Create your password">
+            <p id="focusInfo" class="hidden-info">8 or more characters</p>
+            <p>
+                The focus event happens when you click or tab into an input or field. You can use it to highlight the
+                field or show instructions. For example, in a registration form, you could show password instructions
+                when the user clicks into the password input.
+            </p>
+            <p>
+                The blur event occurs when you click outside an input field or field. You can use it to validate input
+                or hide instructions. For example, in a registration form, you can validate the password or hide
+                instructions when the user leaves the password field.
+            </p>
+        </li>
+        <li>
+            <h2>6. copy</h2>
+            <p id="textToCopy">
+                Try to copy this text. Using Ctrl + C or right-click > Copy
+            </p>
+
+            <div id="copyBlock" class="hidden">
+                <p id="copyMessage"></p>
+                <p>
+                    The copy event happens when a user copies text from the page, for example, pressing Ctrl+C. You can use
+                    it to show a message, log what was copied, or prevent copying sensitive content.
+                </p>
+            </div>
+        </li>
+    </ul>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
