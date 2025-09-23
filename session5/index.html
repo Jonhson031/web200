@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+    Maksym Yaremko
+    WEB 200
+    Assignment 5
+    09/22/2025
+ -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 200 - Session 5, Lab 1 of 2: Form Field Validation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>WEB 200 - Session 5, Lab 1 of 2: Form Field Validation</h1>
+    <h2>Validate Zip Code</h2>
+    <form action="submit" class="zipcode-form">
+        <label for="zip">Enter Zip Code</label>
+        <input type="text" id="zip" size="5" maxlength="5">
+        <input type="button" value="Check Zip Code" onclick="checkZip(document.getElementById('zip').value)">
+    </form>
+    <br>
+    <form action="submit" class="temp__form">
+        <label for="temp">Enter Temperature</label>
+        <input type="text" id="temp" size="3" maxlength="3">
+        <input type="button" value="Check Temp" onclick="checkTemp(document.getElementById('temp').value)">
+        <h3 id="tempText">.</h3>
+    </form>
+    <script>
+        function checkZip(val) {
+            if (val.length < 5) {
+                window.alert('(' + val + ') A Zip code must have at least 5 characters');
+            } else if (isNaN(val)) {
+                window.alert('(' + val + ') A Zip code must be a number');
+            } else {
+                window.alert('(' + val + ') The Zip code you entered is valid');
+            }
+        }
+
+
+        function checkTemp(temp) {
+            if (isNaN(temp)) {
+                window.alert('Temperature must be a number');
+            } else {
+                if (temp > 64 && temp <= 80) {
+                    document.getElementById('tempText').innerHTML = temp + " degrees is very nice";
+                    document.getElementById('tempText').style = "color: green";
+                } else if (temp > 80) {
+                    document.getElementById('tempText').innerHTML = temp + " degrees is HOT";
+                    document.getElementById('tempText').style = "color: red";
+                } else {
+                    document.getElementById('tempText').innerHTML = temp + " degrees is Chilly";
+                    document.getElementById('tempText').style = "color: blue";
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
