@@ -7,7 +7,6 @@ document.getElementById("book-btn").addEventListener("click", function () {
     const publisher = document.getElementById("book-publisher").value.trim();
     const city = document.getElementById("book-city").value.trim();
     const state = document.getElementById("book-state").value.trim();
-
     if (!title || !author || !year || !publisher || !city || !state) {
         alert("Please fill in all fields!");
         return;
@@ -30,19 +29,29 @@ document.getElementById("book-btn").addEventListener("click", function () {
 });
 function displaySorted() {
     const list = document.querySelector(".book-list");
+    const selectedFormat = document.getElementById('select-format').value.toLowerCase();
     list.innerHTML = "";
 
     books.forEach(book => {
         let formatted = "";
 
-        if (book.format === "APA") {
+        if (selectedFormat === "apa") {
             formatted = `${book.author} (${book.year}). <i>${book.title}</i>. ${book.city}, ${book.state}: ${book.publisher}.`;
-        } else {
+            const li = document.createElement("li");
+            li.innerHTML = `${formatted} <br>`;
+            list.appendChild(li);
+        } else if (selectedFormat === 'mla') {
             formatted = `${book.author}. <i>${book.title}</i>. ${book.city}, ${book.state}: ${book.publisher}, ${book.year}.`;
+            const li = document.createElement("li");
+            li.innerHTML = `${formatted} <br>`;
+            list.appendChild(li);
+        } else{
+            alert('Choose format');
         }
 
-        const li = document.createElement("li");
-        li.innerHTML = `${formatted} <br>`;
-        list.appendChild(li);
+
+        // const li = document.createElement("li");
+        // li.innerHTML = `${formatted} <br>`;
+        // list.appendChild(li);
     });
 }
