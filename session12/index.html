@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Maksym Yaremko, WEB 200, Session 12 Lab, Date: 11.11.2025 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB 200 - Session 12 Lab: Dynamic HTML</title>
+</head>
+
+<body>
+    <script>
+
+        const hOne = document.createElement("h1");
+        const hOneC = document.createTextNode("WEB 200 - Session 12 Lab: Dynamic HTML");
+        hOne.appendChild(hOneC);
+        document.body.appendChild(hOne);
+        document.getElementsByTagName("h1")[0].style.fontStyle = "italic";
+
+        const parra = document.createElement("p");
+        const parraC = document.createTextNode("This is paragraph content.");
+        parra.appendChild(parraC);
+        document.body.appendChild(parra);
+        document.getElementsByTagName("p")[0].style.color = "red";
+
+
+        const hTwo = document.createElement("h2");
+        const hTwoC = document.createTextNode("Bread");
+        hTwo.appendChild(hTwoC);
+        document.body.appendChild(hTwo);
+        document.getElementsByTagName("h2")[0].style.color = "blue";
+
+
+        const list = document.createElement("ul");
+        document.body.appendChild(list);
+
+        const items = ["Water", "Flour", "Salt", "Yeast"];
+        items.forEach(item => {
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(item));
+            list.appendChild(li);
+        });
+
+
+        const addBtn = document.createElement("button");
+        addBtn.textContent = "Add List Item";
+        document.body.insertBefore(addBtn, hOne);
+
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove First Item";
+        document.body.insertBefore(removeBtn, hOne);
+
+        const changeBtn = document.createElement("button");
+        changeBtn.textContent = "Change H1 Style";
+        document.body.insertBefore(changeBtn, hOne);
+
+
+        addBtn.addEventListener("click", () => {
+            const newItem = document.createElement("li");
+            newItem.textContent = "New Ingredient";
+            list.appendChild(newItem);
+        });
+
+        removeBtn.addEventListener("click", () => {
+            const firstItem = list.firstElementChild;
+            if (firstItem) list.removeChild(firstItem);
+        });
+
+        changeBtn.addEventListener("click", () => {
+            const h1 = document.getElementsByTagName("h1")[0];
+            h1.style.color = h1.style.color === "green" ? "black" : "green";
+            h1.style.fontSize = h1.style.fontSize === "36px" ? "28px" : "36px";
+        });
+    </script>
+
+</body>
+
+</html>
