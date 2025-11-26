@@ -1,0 +1,23 @@
+#envelope {
+  width: 500px;
+  height: 250px;
+  border: 2px solid #000;
+  position: relative;
+  padding: 20px;
+}
+
+#return-address {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+#to-address {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  font-size: 18px;
+  line-height: 1.4;
+}

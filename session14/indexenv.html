@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Maksym Yaremko, WEB 200, Session 14 Lab, Date: 11.25.2025 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelope Print</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <div id="envelope">
+        <div id="return-address">
+            Maksym Yaremko<br>
+            123 Main St<br>
+            Chicago, IL 60600
+        </div>
+        <p id="to-address"></p>
+    </div>
+    <script>
+        const stored = localStorage.getItem('object');
+        const object = JSON.parse(stored);
+        const toAddress = `
+            ${object.firstName} ${object.lastName}<br>
+            ${object.address}<br>
+            ${object.city}, ${object.state} ${object.zip}
+            `;
+
+        document.getElementById("to-address").innerHTML = toAddress;
+    </script>
+</body>
+
+</html>
