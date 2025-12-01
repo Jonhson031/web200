@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Maksym Yaremko, WEB 200, Final Project, Date: 11..2025 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Pizza | Final Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="scripts/script.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title">Checkout</h1>
+                <a href="index.html" class="header__close checkout__button-close button-close">
+                </a>
+            </div>
+        </header>
+        <main class="checkout">
+            <div class="checkout__container">
+                <h2 class="checkout__title">Delivery Info</h2>
+                <h2 class="checkout__summary-title">Order Summary</h2>
+                <form action="" method="post" class="checkout__form">
+                    <div class="checkout__input">
+                        <label for="checkout__name">Full Name*</label>
+                        <input type="text" placeholder="First and last name" id="checkout__name" name="checkout__name"
+                            required>
+                    </div>
+                    <div class="checkout__input">
+                        <label for="checkout__address">Address*</label>
+                        <input type="text" placeholder="Street Address" id="checkout__address" name="checkout__address"
+                            required>
+                    </div>
+                    <div class="checkout__input">
+                        <label for="checkout__city">City*</label>
+                        <input type="text" placeholder="e.g Chicago" id="checkout__city" name="checkout__city" required>
+                    </div>
+                    <div class="checkout__input">
+                        <label for="checkout__state">State*</label>
+                        <input type="text" placeholder="e.g Illinois" id="checkout__state" name="checkout__state"
+                            required>
+                    </div>
+                    <div class="checkout__input">
+                        <label for="checkout__zip">Zip Code*</label>
+                        <input type="text" placeholder="e.g 60601" id="checkout__zip" name="checkout__zip" required>
+                    </div>
+                    <div class="checkout__input">
+                        <label for="checkout__phone">Phone Number*</label>
+                        <input type="tel" placeholder="" id="checkout__phone" name="checkout__phone" required>
+                    </div>
+                    <button class="checkout__button button">Continue</button>
+                </form>
+                <div class="cart__summary checkout__summary">
+                    <div class="cart__summary-subtotal cart__summary-item">
+                        <span>Subtotal</span>
+                        <span class="cart__summary-subtotal--price cart__summary-price">$0</span>
+                    </div>
+                    <div class="cart__summary-tax cart__summary-item">
+                        <span>Tax</span>
+                        <span class="cart__summary-tax--price cart__summary-price">$0</span>
+                    </div>
+                    <div class="cart__summary-total cart__summary-item">
+                        <span>Total</span>
+                        <span class="cart__summary-total--price cart__summary-price">$0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

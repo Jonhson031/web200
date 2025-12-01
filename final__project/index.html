@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Maksym Yaremko, WEB 200, Final Project, Date: 11..2025 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Pizza | Final Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="scripts/script.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="overlay"></div>
+        <header class="header">
+            <div class="header__container">
+                <h1 class="header__title">Order Pizza</h1>
+                <button class="header__cart">
+                    <img src="images/cart.svg" alt="cart black icon">
+                    <span class="cart__counter">0</span>
+                </button>
+            </div>
+        </header>
+        <main>
+            <div class="order__container">
+                <ul class="order__list">
+                    <li class="order__item">
+                        <div class="order__image">
+                            <img src="images/image-1.svg" alt="Image of Piza">
+                        </div>
+                        <div class="order__content">
+                            <h2 class="order__title">Margarita</h2>
+                            <p class="order__description">
+                                <span class="order__size">Medium</span> | <span class="order__ingridients">
+                                    Cheese , onion, and
+                                    tomato pure
+                                </span>
+                            </p>
+                            <div class="order__bottom">
+                                <div class="order__price">$12</div>
+                                <button class="order__customize">Customize</button>
+                                <button class="order__button">
+                                    <span><img src="images/add_24px.svg" alt="add icon"></span>Add</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="order__item">
+                        <div class="order__image">
+                            <img src="images/image-2.svg" alt="Image of Piza">
+                        </div>
+                        <div class="order__content">
+                            <h2 class="order__title">Classic Pepporoni</h2>
+                            <p class="order__description">
+                                <span class="order__size">Medium</span> | <span class="order__ingridients">Cheese,
+                                    hungarian
+                                    pepper, paneer, capsicum and onion</span>
+                            </p>
+                            <div class="order__bottom">
+                                <div class="order__price">$13</div>
+                                <button class="order__customize">Customize</button>
+                                <button class="order__button">
+                                    <span><img src="images/add_24px.svg" alt="add icon"></span>Add</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="order__item">
+                        <div class="order__image">
+                            <img src="images/image-3.svg" alt="Image of Piza">
+                        </div>
+                        <div class="order__content">
+                            <h2 class="order__title">Chicken Supreme</h2>
+                            <p class="order__description">
+                                <span class="order__size">Medium</span> | <span class="order__ingridients">
+                                    Cheese , chichen, and
+                                    tomato pure
+                                </span>
+                            </p>
+                            <div class="order__bottom">
+                                <div class="order__price">$14</div>
+                                <button class="order__customize">Customize</button>
+                                <button class="order__button">
+                                    <span><img src="images/add_24px.svg" alt="add icon"></span>Add</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="order__item">
+                        <div class="order__image">
+                            <img src="images/image-4.svg" alt="Image of Piza">
+                        </div>
+                        <div class="order__content">
+                            <h2 class="order__title">Vegeterian</h2>
+                            <p class="order__description">
+                                <span class="order__size">Medium</span> | <span class="order__ingridients">
+                                    Cheese , onion, and
+                                    tomato pure
+                                </span>
+                            </p>
+                            <div class="order__bottom">
+                                <div class="order__price">$11</div>
+                                <button class="order__customize">Customize</button>
+                                <button class="order__button">
+                                    <span><img src="images/add_24px.svg" alt="add icon"></span>Add</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <div class="cart">
+            <div class="cart__container">
+                <div class="cart__header">
+                    <h2 class="cart__title">Your Order</h2>
+                    <div class="cart__button-close button-close"></div>
+                </div>
+                <ul class="cart__list">
+                    <li class="cart__item">
+                        <h2 class="cart__item-title order__title">Vegeterian</h2>
+                        <p class="cart__description order__description">
+                            <span class="order__size">Medium</span> |<span class="order__ingridients">
+                                Cheese , onion, and
+                                tomato pure
+                            </span>
+                        </p>
+                        <div class="cart__bottom order__bottom">
+                            <div class="cart__price order__price">$11</div>
+                            <button class="cart__remove">Remove</button>
+                            <div class="cart__item-quantity">
+                                <div class="cart__item-substract"></div>
+                                <div class="cart__item-total">1</div>
+                                <div class="cart__item-add"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="cart__summary">
+                    <div class="cart__summary-subtotal cart__summary-item">
+                        <span>Subtotal</span>
+                        <span class="cart__summary-subtotal--price cart__summary-price">$300</span>
+                    </div>
+                    <div class="cart__summary-tax cart__summary-item">
+                        <span>Tax</span>
+                        <span class="cart__summary-tax--price cart__summary-price">$300</span>
+                    </div>
+                    <div class="cart__summary-total cart__summary-item">
+                        <span>Total</span>
+                        <span class="cart__summary-total--price cart__summary-price">$300</span>
+                    </div>
+                    <a href="checkout.html" class="cart__button-checkout">Go to Checkout</a>
+                </div>
+            </div>
+        </div>
+        <div class="customize">
+            <div class="customize__container">
+                <div class="customize__header">
+                    <h2 class="customize__title">Your Order</h2>
+                    <div class="customize__button-close button-close"> </div>
+                </div>
+                <div class="customize__size customize__section">
+                    <h2 class="customize__size-title customize__section-title">Choose Size (Required)</h2>
+                    <label class="customize__size-select customize__section-select" for="customize__size-small">
+                        <input type="radio" name="customize__size" id="customize__size-small" value="Small">
+                        <span class="customize__section--size">Small - 6”</span>
+                        <span class="customize__section--price">$8</span>
+                    </label>
+                    <label class="customize__size-select customize__section-select" for="customize__size-medium"
+                        checked>
+                        <input type="radio" name="customize__size" id="customize__size-medium" value="Medium">
+                        <span class="customize__section--size">Medium - 10”</span>
+                        <span class="customize__section--price">$12</span>
+                    </label>
+                    <label class="customize__size-select customize__section-select" for="customize__size-large">
+                        <input type="radio" name="customize__size" id="customize__size-large" value="Large">
+                        <span class="customize__section--size">Large - 14”</span>
+                        <span class="customize__section--price">$16</span>
+                    </label>
+                </div>
+                <div class="customize__crust customize__section">
+                    <h2 class="customize__crust-title customize__section-title">Select Crust (Required)</h2>
+                    <label class="customize__crust-select customize__section-select" for="customize__crust-classic">
+                        <input type="radio" name="customize__crust" id="customize__crust-classic"
+                            value="Classic Hand Tossed">
+                        <span class="customize__section--size">Classic Hand tossed</span>
+                    </label>
+                    <label class="customize__crust-select customize__section-select" for="customize__crust-thin">
+                        <input type="radio" name="customize__crust" id="customize__crust-thin" value="Thin Crust">
+                        <span class="customize__section--size">Thin Crust</span>
+                    </label>
+                    <label class="customize__crust-select customize__section-select" for="customize__crust-cheese">
+                        <input type="radio" name="customize__crust" id="customize__crust-cheese" value="Cheese Brust">
+                        <span class="customize__section--size">Cheese Brust</span>
+                        <span class="customize__section--price">$ + 1.50</span>
+                    </label>
+                </div>
+                <div class="customize__adds customize__section">
+                    <h2 class="customize__adds-title customize__section-title">Add ons (Optinal)</h2>
+                    <label class="customize__adds-select customize__section-select" for="customize__adds-cheese">
+                        <input type="checkbox" name="customize__adds" id="customize__adds-cheese">
+                        <span class="customize__section--size">Add Extra Cheese</span>
+                        <span class="customize__section--price">$ + 1.50</span>
+                    </label>
+                    <label class="customize__adds-select customize__section-select" for="customize__adds-mushrooms">
+                        <input type="checkbox" name="customize__adds" id="customize__adds-mushrooms">
+                        <span class="customize__section--size">Add Mushrooms</span>
+                        <span class="customize__section--price">$ + 1.50</span>
+                    </label>
+                    <label class="customize__adds-select customize__section-select" for="customize__adds-ham">
+                        <input type="checkbox" name="customize__adds" id="customize__adds-ham">
+                        <span class="customize__section--size">Add Ham</span>
+                        <span class="customize__section--price">$ + 1.50</span>
+                    </label>
+                    <label class="customize__adds-select customize__section-select" for="customize__adds-sausage">
+                        <input type="checkbox" name="customize__adds" id="customize__adds-sausage">
+                        <span class="customize__section--size">Add Sausage</span>
+                        <span class="customize__section--price">$ + 1.00</span>
+                    </label>
+                    <label class="customize__adds-select customize__section-select" for="customize__adds-prosciutto">
+                        <input type="checkbox" name="customize__adds" id="customize__adds-prosciutto">
+                        <span class="customize__section--size">Add Prosciutto</span>
+                        <span class="customize__section--price">$ + 2.00</span>
+                    </label>
+                    <label class="customize__adds-select customize__section-select" for="customize__adds-olives">
+                        <input type="checkbox" name="customize__adds" id="customize__adds-olives">
+                        <span class="customize__section--size">Add Black olives</span>
+                        <span class="customize__section--price">$ + 0.50</span>
+                    </label>
+                </div>
+                <div class="customize__bottom">
+                    <button class="customize__button">
+                        <span><img src="images/add_24px.svg" alt="add icon"></span>
+                        Add to cart
+                    </button>
+                    <div class="customize__total">
+                        Item Total
+                        <span>$0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
