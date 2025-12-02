@@ -622,7 +622,8 @@ body {
 
     &__container {
         display: grid;
-        grid-template-columns: 2;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 5rem;
     }
 
     // .checkout__title
@@ -641,7 +642,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
-        max-width: 70%;
+        width: 100%;
 
         & div {
             grid-column: 1 / span 2;
@@ -689,7 +690,7 @@ body {
     }
 
     &__error {
-        display: none;
+        // display: none;
         font-size: 0.9rem;
         color: #ff0000;
     }
@@ -730,5 +731,36 @@ body {
 
     .cart__summary {
         margin: 0;
+    }
+}
+
+.receipt, .checkout {
+
+    p {
+        color: rgba(18, 18, 18, 0.8);
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 130%;
+        letter-spacing: 0.03rem;
+    }
+
+    h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.7rem;
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    .cart {
+
+        &__remove,
+        &__item-substract,
+        &__item-add {
+            display: none;
+        }
+        &__item-quantity{
+            flex: 0 1 30%;
+            justify-content: flex-end;
+        }
     }
 }

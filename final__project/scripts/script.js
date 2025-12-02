@@ -218,12 +218,13 @@ function renderCart() {
                             <button onclick="removeCartItem('${item.title}', '${item.size}', '${item.ingridients}')" class="cart__remove">Remove</button>
                             <div class="cart__item-quantity">
                                 <div onclick="decreaseQuantity('${item.title}', '${item.size}', '${item.ingridients}')" class="cart__item-substract"></div>
-                                <div class="cart__item-total">${item.counter}</div>
+                                <div class="cart__item-total">${document.querySelector('.receipt, .checkout') ? 'Quantity:' : ''} ${item.counter}</div>
                                 <div onclick="increaseQuantity('${item.title}', '${item.size}', '${item.ingridients}')" class="cart__item-add"></div>
                             </div>
                         </div>
                     </li>`;
     })
+    if (!cartCounter) return;
     const totalItems = cart.reduce((sum, item) => Number(sum) + Number(item.counter), 0);
     cartCounter.innerText = totalItems;
     localStorage.setItem("cartCounter", totalItems);
@@ -291,6 +292,8 @@ buttonCheckoutCart?.addEventListener('click', function (e) {
     if (cart.length < 1) e.preventDefault();
     cartSummary();
 })
+
+// Checkout Page
 document.querySelector('.checkout')?.addEventListener('load', cartSummary());
 
 
@@ -302,10 +305,42 @@ const userCity = document.getElementById('checkout__city');
 const userState = document.getElementById('checkout__state');
 const userZip = document.getElementById('checkout__zip');
 const userPhone = document.getElementById('checkout__phone');
+const userInstructions = document.getElementById('checkout__instuctions');
 let userInfo = {};
+const inputs = [userName, userAddress, userCity, userState, userZip, userPhone]
 
-checkoutButton.addEventListener('click', function (e) {
+const validateForm = function () {
+    console.log(1);
+    let valid = true;
+
+    inputs.forEach(input => {
+        if (!input.value.trim() || input.value.trim().length < 1) {
+            const existingError = input.parentElement.querySelector('.checkout__error');
+            if (existingError) {
+                input.parentElement.removeChild(existingError);
+            }
+
+            const validaitonError = document.createElement('span');
+            validaitonError.classList.add('checkout__error');
+            validaitonError.textContent = 'This field cannot be left blank';
+            input.parentElement.appendChild(validaitonError);
+            valid = false;
+        } else {
+            const existingError = input.parentElement.querySelector('.checkout__error');
+            if (existingError) {
+                input.parentElement.removeChild(existingError);
+            }
+        }
+    })
+    return valid;
+}
+document.querySelector('form')?.querySelectorAll('input')?.forEach(input => input.addEventListener('input', function () {
+    validateForm();
+}));
+
+checkoutButton?.addEventListener('click', function (e) {
     e.preventDefault();
+    if (!validateForm()) return;
     userInfo = {
         userName: userName.value,
         userAddress: userAddress.value,
@@ -313,6 +348,26 @@ checkoutButton.addEventListener('click', function (e) {
         userState: userState.value,
         userZip: userZip.value,
         userPhone: userPhone.value,
+        userInstructions: userInstructions.value,
     }
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+    window.open('receipt.html');
 })
+
+
+// Receipt page
+const addressPrint = document.getElementById('to-address');
+const addionalInstructions = document.getElementById('addional-instructions');
+function receipt() {
+    console.log(1)
+    let userInfo = JSON.parse(localStorage.getItem("userInfo")) || [];
+    addressPrint.innerHTML = `${userInfo.userName}<br>${userInfo.userAddress}<br>${userInfo.userCity}, ${userInfo.userState} ${userInfo.userZip}`;
+    if (!userInfo.userInstructions) {
+        addionalInstructions.style.display = 'none'
+        return;
+    }
+    addionalInstructions.querySelector('p').textContent = userInfo.userInstructions;
+}
+
+document.querySelector('.receipt')?.addEventListener('', receipt());

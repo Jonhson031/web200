@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <!-- Maksym Yaremko, WEB 200, Final Project, Date: 11..2025 -->
+    <!-- Maksym Yaremko, WEB 200, Final Project, Date: 12.01.2025 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Pizza | Final Project</title>
+    <title>Order Pizza | Checkout</title>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="scripts/script.js"></script>
 </head>
@@ -45,15 +45,40 @@
                     </div>
                     <div class="checkout__input">
                         <label for="checkout__zip">Zip Code*</label>
-                        <input type="text" placeholder="e.g 60601" id="checkout__zip" name="checkout__zip" required>
+                        <input type="number" placeholder="e.g 60601" id="checkout__zip" name="checkout__zip" required>
                     </div>
                     <div class="checkout__input">
                         <label for="checkout__phone">Phone Number*</label>
-                        <input type="tel" placeholder="" id="checkout__phone" name="checkout__phone" required>
+                        <input type="tel" placeholder="Enter your phone number" id="checkout__phone"
+                            name="checkout__phone" required>
+                    </div>
+                    <div class="checkout__input">
+                        <label for="checkout__instuctions">Delivery instructions (Optional)</label>
+                        <input type="text" placeholder="Add addional delivery Instructions" id="checkout__instuctions"
+                            name="checkout__instuctions">
                     </div>
                     <button class="checkout__button button">Continue</button>
                 </form>
                 <div class="cart__summary checkout__summary">
+                    <ul class="cart__list">
+                        <h2 class="cart__item-title order__title">Vegeterian</h2>
+                        <p class="cart__description order__description">
+                            <span class="order__size">Medium</span> |<span class="order__ingridients">
+                                Cheese , onion, and
+                                tomato pure
+                            </span>
+                        </p>
+                        <div class="cart__bottom order__bottom">
+                            <div class="cart__price order__price">$11</div>
+                            <button class="cart__remove">Remove</button>
+                            <div class="cart__item-quantity">
+                                <div class="cart__item-substract"></div>
+                                <div class="cart__item-total">1</div>
+                                <div class="cart__item-add"></div>
+                            </div>
+                        </div>
+                        </li> -->
+                    </ul>
                     <div class="cart__summary-subtotal cart__summary-item">
                         <span>Subtotal</span>
                         <span class="cart__summary-subtotal--price cart__summary-price">$0</span>
