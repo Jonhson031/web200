@@ -43,8 +43,6 @@ document.addEventListener('keydown', (e) => {
 let currentProduct = null;
 let modalState = null;
 
-
-
 // Cart + customize
 function updateCart(productInfo) {
     cartCounter.innerText++;
@@ -145,7 +143,6 @@ customize?.addEventListener('change', function () {
     // size
     const sizeInput = document.querySelector('input[name="customize__size"]:checked');
     if (sizeInput) {
-        // modalState.size = sizeInput.closest('label').querySelector('.customize__section--size').textContent;
         modalState.size = sizeInput.value;
         const priceEl = sizeInput.parentElement.querySelector('.customize__section--price');
         modalState.sizePrice = priceEl ? parseFloat(priceEl.textContent.replace('$', '').trim()) : 0;
@@ -310,7 +307,6 @@ let userInfo = {};
 const inputs = [userName, userAddress, userCity, userState, userZip, userPhone]
 
 const validateForm = function () {
-    console.log(1);
     let valid = true;
 
     inputs.forEach(input => {
@@ -320,10 +316,10 @@ const validateForm = function () {
                 input.parentElement.removeChild(existingError);
             }
 
-            const validaitonError = document.createElement('span');
-            validaitonError.classList.add('checkout__error');
-            validaitonError.textContent = 'This field cannot be left blank';
-            input.parentElement.appendChild(validaitonError);
+            const validationError = document.createElement('span');
+            validationError.classList.add('checkout__error');
+            validationError.textContent = 'This field cannot be left blank';
+            input.parentElement.appendChild(validationError);
             valid = false;
         } else {
             const existingError = input.parentElement.querySelector('.checkout__error');
@@ -370,4 +366,4 @@ function receipt() {
     addionalInstructions.querySelector('p').textContent = userInfo.userInstructions;
 }
 
-document.querySelector('.receipt')?.addEventListener('', receipt());
+document.querySelector('.receipt')?.addEventListener('load', receipt());
